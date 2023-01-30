@@ -44,8 +44,12 @@ header h1 {
   font-size: 2.5rem;
 }
 
+#to-start, #to-start::before {
+  display: none;
+}
 
-/* Deprecated: we know use an image */
+
+/* Deprecated: we now use an image */
 .slogan-glb {
  /* font-size:32px; */
  font-size: 2.5rem;
@@ -68,6 +72,10 @@ header h1 {
  .slogan-nat {
    font-size:1.5rem;
  }
+ .hero.hero-fullscreen {
+  min-height: 50vh;
+}
+
 }
 @media (max-width:600px) {
   .slogan-glb {
@@ -76,4 +84,14 @@ header h1 {
   .slogan-nat {
     font-size:1rem;
   }
+}
+
+
+.navLangSwitcher::before {
+  content: '\f1ab' !important;
+  margin-top: -15px;
+  font-family: FontAwesome;
+  font-size: xx-large;
+  font-weight: 100;
+  text-rendering: auto;
 }

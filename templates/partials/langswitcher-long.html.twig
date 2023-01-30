@@ -1,0 +1,15 @@
+{#
+    https://discord.com/channels/501836936584101899/510527519066161193/1067555792565305415
+#}{#
+
+That is a correct assertion. The LangSwitcher-plugin uses Grav's set of standardized double-letter ISO-codes, rather than a customizable list, via native_name() in Twig, defined as: https://github.com/getgrav/grav-plugin-langswitcher/blob/3.1.0/langswitcher.php#L61. This refers to this array: https://github.com/getgrav/grav/blob/1.7.38/system/src/Grav/Common/Language/LanguageCodes.php#L19.
+
+As said, the simple solution for a low amount of languages is what you have done already. If that amount increases, your theme should override https://github.com/getgrav/grav-plugin-langswitcher/blob/3.1.0/templates/partials/langswitcher-long.html.twig to use your own lookup-function. In practice, this can be as simple as a similarly defined list in YAML, in your theme's .yaml, checking the same config.plugins.langswitcher.language_display for "long", but looking up your own data in config.theme.YOURTHEME.languages and returning the nativeName that corresponds to the three-letter language code.
+
+This also lets you manage your own list through blueprints, to make the list of languages easier to manage and maintain.
+
+#}{% if language == "eng" %}English{%
+ elseif language == "epo" %}Esperanto{%
+ elseif language == "glb" %}Globasa{%
+ elseif language == "spa" %}español{%
+ else %}{{language}}{% endif %}

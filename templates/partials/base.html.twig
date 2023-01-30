@@ -3,17 +3,18 @@
 {# This is a copy of Quark's partial's block with changes commented #}
 
 {% block head %}
-    <meta charset="utf-8" />
-    <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+{{ parent() }}
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include 'partials/metadata.html.twig' %}
+{# change: use Globasa's webp logo #}
+{# Would not be required if it wasn't a webp #}
+<link rel="icon" type="image/png" href="{{ url('theme://images/logo-globasa.webp') }}" />
+{% include 'partials/langswitcher.hreflang.html.twig' %}
+{# end change #}
 
-    {# change: use Globasa's webp logo #}
-    {# Would not be required if it wasn't a webp #}
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo-globasa.webp') }}" />
-    {# end change #}
-
-    <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
+
+ 
+{% block stylesheets %}
+    {{ parent() }}
+    {% do assets.addCss('theme://css/globasa.css?0130') %}
+{% endblock %}
