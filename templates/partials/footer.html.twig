@@ -1,17 +1,20 @@
-<section id="footer" class="section bg-gray">
+<footer id="footer" class="section bg-gray">
     <section class="container {{ grid_size }} globasa_links"><p>
         <a href="https://globasa.net/{{ html_lang }}/">🔗 Globasa</a> -
         <a href="https://xwexi.globasa.net/{{ html_lang }}/">🔰 Xwexi</a> -
         <a href="https://doxo.globasa.net/{{ html_lang }}/">📖 Doxo</a> -
         <a href="https://menalari.globasa.net/{{ html_lang }}/">📔 Menalari</a> <br/>
-        <a href="https://www.globasa.net/{{ html_lang }}/pimpan-swal/kontato">🐛 Report a problem or bug</a>
+        <a href="https://www.globasa.net/{{ html_lang }}/pimpan-swal/kontato">⚠️ {{ 'REPORT_ERROR'|t }}</a>
     </p></section>
-    <section class="container {{ grid_size }}"><p>
-        <a xmlns:dct="http://purl.org/dc/terms/" rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/">
-        <abbr title="Creative Commons Public Domain">CC0</abr></a>
-         by the Globasa Community.
-        
-        Built with <a href="http://getgrav.org/">Grav</a>
-        on a <a href="https://partialsolution.ca">Partial Solution</a>.
-    </p></section>
+<section class="copyright">  
+  <a xmlns:dct="http://purl.org/dc/terms/" rel="license" class="cc_license webbadge"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="{{ url('theme://images/cc_blue_x2.png') }}" alt="CC0" class="cc_license"/>
+    <img src="{{ url('theme://images/zero_blue_x2.png') }}" alt="CC0" class="cc_license"/>
+  </a>
+  <p xmlns:dct="http://purl.org/dc/terms/" class="cc_license">
+    {{ 'COPYRIGHT_NOTICE'|t }} {{ 'HOST_NOTICE'|t }}
+  </p>
 </section>
+
+</footer>

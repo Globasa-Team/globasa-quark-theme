@@ -99,3 +99,29 @@ header h1 {
 .globasa_links a {
   white-space: nowrap;
 }
+
+
+.cc_license, #body footer img.cc_license {
+  vertical-align: middle;
+}
+
+footer {
+  font-size: medium;
+}
+
+footer img.cc_license {
+  float: left;
+  display: block;
+  max-width: 2em;
+  margin: .51em 0 0 0;
+  height: auto;
+}   
+
+footer img.cc_license:last-of-type {
+  margin-right: .51em;
+}
+
+footer .copyright {
+  max-width: 700px;
+  margin: auto;
+}
